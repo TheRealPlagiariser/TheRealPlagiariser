@@ -1,0 +1,56 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: white;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  
+  th {
+    font-weight: bold;
+  }
+
+  form {
+    padding: 20px;
+  }
+  
+  mat-form-field {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+
+  .form-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  }
+  
+  .form-field {
+    margin-bottom: 10px;
+  }

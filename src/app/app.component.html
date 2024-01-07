@@ -1,0 +1,76 @@
+<form (ngSubmit)="onSubmit()">
+  <div class="form-container">
+    <div *ngFor="let n of [1,2,3,4,5,6]; let i = index" class="form-field">
+      <mat-form-field appearance="fill">
+        <mat-label>Case Name {{i+1}}</mat-label>
+        <mat-select [(ngModel)]="selectedCases[i]" name="caseName{{i}}">
+          {{ sortCasesAlphabetically() }}
+          <mat-option *ngFor="let case of cases" [value]="case.CaseName">
+            {{ case.CaseName }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </div>
+</form>
+
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Optimal assists (Weight: ATK = 11, HP = 5, Rest = 1, higher the better)</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table>
+      <thead>
+        <tr>
+          <th>Link Name</th>
+          <th>Weight</th>
+          <th>Contains multiple units in links</th>
+          <th>Links number</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let link of selectedLinksArray">
+          <td>{{ link.name }}</td>
+          <td>{{ link.weight }}</td>
+          <td>{{ link.multipleLinks ? 'Yes' : 'No' }}</td>
+          <td>{{ link.linkCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+<br><br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Case Name</th>
+      <th>Is In Global</th>
+      <th>Link 1</th>
+      <th>Link 1 Weight</th>
+      <th>Link 2</th>
+      <th>Link 2 Weight</th>
+      <th>Link 3</th>
+      <th>Link 3 Weight</th>
+      <th>Link 4</th>
+      <th>Link 4 Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let case of cases">
+      <td>{{ case.CaseName }}</td>
+      <td>{{ case.IsInGlobal }}</td>
+      <td>{{ case.Link_1 }}</td>
+      <td>{{ case.Link_1_weight }}</td>
+      <td>{{ case.Link_2 }}</td>
+      <td>{{ case.Link_2_weight }}</td>
+      <td>{{ case.Link_3 }}</td>
+      <td>{{ case.Link_3_weight }}</td>
+      <td>{{ case.Link_4 }}</td>
+      <td>{{ case.Link_4_weight }}</td>
+    </tr>
+  </tbody>
+</table>
